@@ -1,26 +1,218 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-cormorant);
+  --font-heading: var(--font-cormorant);
+
+  /* Assurex brand palette */
+  --color-forest: #063d2e;
+  --color-emerald-deep: #03291f;
+  --color-gold: #c79a3b;
+  --color-gold-ink: #8a6420;
+  --color-gold-soft: #e7d3a4;
+  --color-champagne: #f6f0e3;
+  --color-ink: #202820;
+  --color-slate-green: #647067;
+  --color-mist: #f7f8f5;
+  --color-line: #e3e0d6;
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #ffffff;
+  --foreground: #202820;
+  --card: #ffffff;
+  --card-foreground: #202820;
+  --popover: #ffffff;
+  --popover-foreground: #202820;
+  --primary: #063d2e;
+  --primary-foreground: #ffffff;
+  --secondary: #f6f0e3;
+  --secondary-foreground: #063d2e;
+  --muted: #f7f8f5;
+  --muted-foreground: #647067;
+  --accent: #f6f0e3;
+  --accent-foreground: #063d2e;
+  --destructive: #b42318;
+  --border: #e3e0d6;
+  --input: #cfcabb;
+  --ring: #8a6420;
+  --radius: 0.125rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    scroll-padding-top: 7rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "cv11";
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-variant-numeric: lining-nums;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-cormorant), Georgia, serif;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  :focus-visible {
+    outline: 2px solid #8a6420;
+    outline-offset: 3px;
+  }
+  ::selection {
+    background: #e7d3a4;
+    color: #03291f;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-[0.7rem] font-semibold tracking-[0.28em] uppercase;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply inline-block h-px w-8 bg-gold;
+  }
+  .gold-rule {
+    height: 1px;
+    background: linear-gradient(90deg, rgba(199, 154, 59, 0) 0%, rgba(199, 154, 59, 1) 18%, rgba(199, 154, 59, 1) 82%, rgba(199, 154, 59, 0) 100%);
+  }
+  .ledger-index {
+    font-family: var(--font-cormorant), Georgia, serif;
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+
+  /* Long-form content typography */
+  .prose-assurex {
+    @apply text-[1.0625rem] leading-[1.8] text-ink;
+  }
+  .prose-assurex > * + * {
+    margin-top: 1.1em;
+  }
+  .prose-assurex > :first-child {
+    margin-top: 0;
+  }
+  .prose-assurex h2 {
+    @apply mt-14 text-3xl leading-tight font-semibold text-forest sm:text-[2.15rem];
+  }
+  .prose-assurex h3 {
+    @apply mt-9 text-2xl leading-snug font-semibold text-forest;
+  }
+  .prose-assurex h2 + *,
+  .prose-assurex h3 + * {
+    margin-top: 0.6em;
+  }
+  .prose-assurex a {
+    @apply font-medium text-forest underline decoration-gold decoration-1 underline-offset-4 transition-colors hover:text-gold-ink;
+  }
+  .prose-assurex strong {
+    @apply font-semibold text-emerald-deep;
+  }
+  .prose-assurex ul,
+  .prose-assurex ol {
+    @apply space-y-2 pl-1;
+  }
+  .prose-assurex ul > li {
+    @apply relative pl-6;
+  }
+  .prose-assurex ul > li::before {
+    content: "";
+    @apply absolute top-[0.8em] left-0 h-px w-3 bg-gold;
+  }
+  .prose-assurex ol {
+    counter-reset: item;
+  }
+  .prose-assurex ol > li {
+    @apply relative pl-9;
+    counter-increment: item;
+  }
+  .prose-assurex ol > li::before {
+    content: counter(item, decimal-leading-zero);
+    @apply absolute top-0 left-0 font-display text-lg font-semibold text-gold-ink;
+  }
+  .prose-assurex blockquote {
+    @apply border-l-2 border-gold bg-champagne/70 px-5 py-4 text-[0.98rem] leading-relaxed text-ink;
+  }
+  .prose-assurex table {
+    @apply w-full border-collapse text-left text-[0.95rem];
+  }
+  .prose-assurex th {
+    @apply border-b border-gold/60 bg-champagne/60 px-3 py-2.5 font-semibold text-forest;
+  }
+  .prose-assurex td {
+    @apply border-b border-line px-3 py-2.5 align-top;
+  }
+}
+
+/* Scroll reveal — content is always visible without JavaScript. */
+.reveal-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal-ready [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-ready [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
 }
