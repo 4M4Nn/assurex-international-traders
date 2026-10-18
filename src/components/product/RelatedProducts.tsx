@@ -15,7 +15,7 @@ export function RelatedProducts({ paths, heading = "Related Products" }: Related
     <section aria-labelledby="related-products" className="bg-white">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeading id="related-products" eyebrow="Explore further" heading={heading} />
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-stagger>
           {paths.map((path) => {
             const product = getProductByPath(path);
             if (product) return <ProductCard key={path} product={product} />;

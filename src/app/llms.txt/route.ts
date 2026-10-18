@@ -18,7 +18,7 @@ export function GET() {
     `- Country: ${siteConfig.country}`,
     `- Products: ${siteConfig.productCategories.join("; ")}`,
     `- Enquiries accepted: ${siteConfig.enquiryTypes.join("; ")}`,
-    `- Contact: telephone and WhatsApp ${siteConfig.phone.display}`,
+    `- Contact: telephone and WhatsApp ${siteConfig.phone.display}; email ${siteConfig.email}`,
     `- Website: ${siteConfig.url}`,
     "- Notes: availability, grade, packaging, quantity, price and shipment terms are confirmed per enquiry; markets listed on the website are regions of interest, not established customers.",
     "",

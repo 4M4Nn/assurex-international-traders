@@ -23,7 +23,7 @@ export function ArticleCard({ article, headingLevel = "h3", className }: Article
   const Heading = headingLevel;
   const category = getCategory(article.category);
   return (
-    <article data-reveal className={cn("group relative flex flex-col border-t-2 border-gold bg-white", className)}>
+    <article className={cn("group relative flex flex-col border-t-2 border-gold bg-white", className)}>
       <div className="relative aspect-[16/10] overflow-hidden bg-mist">
         <Image
           src={article.image.src}

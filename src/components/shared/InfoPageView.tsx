@@ -39,7 +39,7 @@ export function InfoPageView({ page, breadcrumbName }: InfoPageViewProps) {
             </div>
             {page.image ? (
               <div className="relative aspect-[4/3] overflow-hidden border border-gold/40">
-                <Image src={page.image.src} alt={page.image.alt} fill priority sizes="(min-width: 1024px) 42vw, 92vw" className="object-cover" />
+                <Image src={page.image.src} alt={page.image.alt} fill priority sizes="(min-width: 1024px) 42vw, 92vw" className="object-cover" data-zoom />
               </div>
             ) : null}
           </div>

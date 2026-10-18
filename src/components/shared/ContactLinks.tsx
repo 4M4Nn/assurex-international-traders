@@ -1,4 +1,4 @@
-import { Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { siteConfig, whatsappLink } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { WhatsAppIcon } from "@/components/shared/WhatsAppIcon";
@@ -26,6 +26,16 @@ export function WhatsAppLink({
     >
       <WhatsAppIcon className={cn("size-4 shrink-0", iconClassName)} />
       <span>{label}</span>
+    </a>
+  );
+}
+
+export function EmailLink({ className, label, iconClassName }: LinkProps) {
+  if (!siteConfig.email) return null;
+  return (
+    <a href={`mailto:${siteConfig.email}`} data-track="email_click" className={className}>
+      <Mail className={cn("size-4 shrink-0", iconClassName)} aria-hidden="true" />
+      <span className="break-all">{label ?? siteConfig.email}</span>
     </a>
   );
 }

@@ -45,6 +45,7 @@ export interface EnquiryFormProps {
   defaultVariety?: RiceVarietyKey;
   sourcePage?: string;
   tone?: "light" | "card";
+  defaults?: Partial<EnquiryValues>;
 }
 
 const inputClass =
@@ -109,13 +110,14 @@ function SectionTitle({ index, title }: { index: string; title: string }) {
   );
 }
 
-export function EnquiryForm({ variant, defaultProduct, defaultVariety, sourcePage, tone = "light" }: EnquiryFormProps) {
+export function EnquiryForm({ variant, defaultProduct, defaultVariety, sourcePage, tone = "light", defaults }: EnquiryFormProps) {
   const uid = useId();
   const [values, setValues] = useState<EnquiryValues>(() => ({
     ...emptyEnquiry,
     product: defaultProduct ?? "",
     riceVariety: defaultProduct === "rice" && defaultVariety ? defaultVariety : "",
     unit: variant === "quote" ? unitOptions[0] : "",
+    ...defaults,
   }));
   const [consent, setConsent] = useState(false);
   const [file, setFile] = useState<File | null>(null);

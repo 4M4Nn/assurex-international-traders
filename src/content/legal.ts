@@ -21,7 +21,7 @@ export const privacyPolicy: LegalPage = {
   updated: UPDATED,
   body: `## Who we are
 
-This website is operated by Assurex International Traders, an India-based international trading business. You can contact us about this policy by telephone or WhatsApp on +91 97467 33133.
+This website is operated by Assurex International Traders, an India-based international trading business. You can contact us about this policy by telephone or WhatsApp on +91 97467 33133, or by email at assurexinternationaltraders@gmail.com.
 
 ## Information we collect
 
@@ -49,7 +49,7 @@ We process enquiry information because you have asked us to respond to you, and 
 
 ## Service providers
 
-To operate this website and deliver enquiries, we use service providers that process data on our behalf, such as our website hosting provider and an email delivery service. They may process data outside your country. We share only what is needed for them to provide their services.
+To operate this website and deliver enquiries, we use service providers that process data on our behalf, such as our website hosting provider (Vercel) and a form-to-email relay service (FormSubmit) that forwards your enquiry to our business inbox. They may process data outside your country. We share only what is needed for them to provide their services.
 
 ## Analytics
 
@@ -61,7 +61,7 @@ We keep enquiry information for as long as needed to handle your enquiry and any
 
 ## Your choices and rights
 
-You can ask us to access, correct or delete the personal information we hold about you, or withdraw your consent for future processing, by contacting us on +91 97467 33133. Withdrawing consent does not affect processing that has already taken place.
+You can ask us to access, correct or delete the personal information we hold about you, or withdraw your consent for future processing, by contacting us on +91 97467 33133 or at assurexinternationaltraders@gmail.com. Withdrawing consent does not affect processing that has already taken place.
 
 ## Security
 
@@ -116,7 +116,7 @@ We may update these terms from time to time. The date at the top of this page sh
 
 ## Contact
 
-Questions about these terms can be sent to us by telephone or WhatsApp on +91 97467 33133.`,
+Questions about these terms can be sent to us by telephone or WhatsApp on +91 97467 33133, or by email at assurexinternationaltraders@gmail.com.`,
 };
 
 export const cookiePolicy: LegalPage = {

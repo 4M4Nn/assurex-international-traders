@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import { CopyrightYear } from "@/components/shared/CopyrightYear";
-import { PhoneLink, WhatsAppLink } from "@/components/shared/ContactLinks";
+import { EmailLink, PhoneLink, WhatsAppLink } from "@/components/shared/ContactLinks";
 import { siteConfig } from "@/config/site";
 import { footerNav } from "@/lib/data";
 
@@ -43,6 +43,7 @@ export function Footer() {
             <p className="mt-6 max-w-sm text-[0.95rem] leading-relaxed text-champagne/80">{siteConfig.description}</p>
             <div className="mt-6 space-y-3">
               <PhoneLink className="flex items-center gap-3 text-[0.95rem] font-medium hover:text-gold" iconClassName="text-gold" />
+              <EmailLink className="flex items-center gap-3 text-[0.95rem] font-medium hover:text-gold" iconClassName="text-gold" />
               <WhatsAppLink
                 label="WhatsApp +91 97467 33133"
                 className="flex items-center gap-3 text-[0.95rem] font-medium hover:text-gold"

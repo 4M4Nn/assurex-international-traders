@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 import { ArticleCard } from "@/components/blog/ArticleCard";
 import { EnquiryForm } from "@/components/forms/EnquiryForm";
-import { ProductCard } from "@/components/product/ProductCard";
+import { CommodityDesk, type DeskItem } from "@/components/sections/CommodityDesk";
 import { ButtonLink } from "@/components/shared/ButtonLink";
 import { PhoneLink, WhatsAppLink } from "@/components/shared/ContactLinks";
 import { FaqList } from "@/components/shared/FaqList";
@@ -28,7 +28,8 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { articles } from "@/content/blog";
 import { productCategories, riceVarieties } from "@/content/catalog";
 import { homeFaqs } from "@/content/faqs";
-import { homeContent } from "@/lib/data";
+import { images } from "@/content/images";
+import { homeContent, quoteHref } from "@/lib/data";
 
 export function IntroSection() {
   const { intro, companyFacts } = homeContent;
@@ -67,6 +68,54 @@ export function IntroSection() {
   );
 }
 
+const deskItems: DeskItem[] = productCategories.map((p) => ({
+  slug: p.slug,
+  path: p.path,
+  name: p.name,
+  short: p.cardTitle,
+  summary: p.summary,
+  image: p.image,
+  formats: p.quickAnswer.formats,
+  checklist: p.specs.slice(0, 6).map((s) => s.parameter),
+  quoteHref: quoteHref(p.quote.product, undefined, "/"),
+  varieties: p.kind === "rice-category" ? riceVarieties.map((v) => ({ label: v.cardTitle, path: v.path })) : undefined,
+}));
+
+export function ParallaxBand() {
+  return (
+    <section aria-labelledby="band-heading" data-parallax-root className="relative isolate overflow-hidden bg-emerald-deep">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-x-0 -inset-y-[18%]" data-parallax="0.14">
+          <Image src={images.portNight.src} alt={images.portNight.alt} fill sizes="100vw" className="object-cover" />
+        </div>
+        <div aria-hidden="true" className="absolute inset-0" style={{ backgroundImage: "linear-gradient(90deg, rgba(3,41,31,0.9) 0%, rgba(3,41,31,0.55) 55%, rgba(3,41,31,0.35) 100%)" }} />
+      </div>
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-28 sm:px-6 md:py-36 lg:grid-cols-[1.3fr_1fr] lg:items-end lg:px-8">
+        <div data-reveal>
+          <p className="eyebrow text-gold">From Indian origin to your port</p>
+          <h2 id="band-heading" className="mt-5 text-[2.4rem] leading-[1.05] font-semibold text-white sm:text-6xl">
+            One accountable point of contact for every consignment.
+          </h2>
+        </div>
+        <ul className="grid grid-cols-2 gap-px bg-gold/25" data-stagger>
+          {[
+            ["Specification", "Agreed in writing before quoting"],
+            ["Packing", "Bag, weight and marks confirmed"],
+            ["Documents", "Coordinated as per contract"],
+            ["Updates", "Dispatch status shared directly"],
+          ].map(([t, b]) => (
+            <li key={t} className="bg-emerald-deep/90 p-5">
+              <p className="font-display text-xl font-semibold text-gold">{t}</p>
+              <p className="mt-1.5 text-[0.85rem] leading-relaxed text-champagne/80">{b}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <p className="absolute right-4 bottom-3 text-[0.6rem] text-champagne/50">Vizhinjam port, Kerala — representative image</p>
+    </section>
+  );
+}
+
 export function ProductsSection() {
   const { productsSection } = homeContent;
   return (
@@ -78,10 +127,8 @@ export function ProductsSection() {
             All products
           </ButtonLink>
         </div>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {productCategories.map((product, i) => (
-            <ProductCard key={product.slug} product={product} index={i} />
-          ))}
+        <div className="mt-12" data-reveal>
+          <CommodityDesk items={deskItems} />
         </div>
       </div>
     </section>
@@ -110,6 +157,7 @@ export function RiceSection() {
               fill
               sizes="(min-width: 1024px) 40vw, 92vw"
               className="object-cover"
+              data-zoom
             />
           </div>
         </div>
@@ -144,7 +192,7 @@ export function SourcingSection() {
         <div data-reveal>
           <SectionHeading id="sourcing-heading" tone="dark" eyebrow={sourcingSection.eyebrow} heading={sourcingSection.heading} lede={sourcingSection.lede} />
           <div className="relative mt-10 aspect-[16/10] overflow-hidden border border-gold/40">
-            <Image src={sourcingSection.image.src} alt={sourcingSection.image.alt} fill sizes="(min-width: 1024px) 40vw, 92vw" className="object-cover" />
+            <Image src={sourcingSection.image.src} alt={sourcingSection.image.alt} fill sizes="(min-width: 1024px) 40vw, 92vw" className="object-cover" data-zoom />
           </div>
           <ButtonLink href="/quality-and-sourcing/" variant="outline-light" className="mt-8">
             Our sourcing approach
@@ -311,7 +359,7 @@ export function InsightsSection() {
             All insights
           </ButtonLink>
         </div>
-        <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3" data-stagger>
           {latest.map((article) => (
             <ArticleCard key={article.slug} article={article} />
           ))}

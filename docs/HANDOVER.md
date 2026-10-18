@@ -2,11 +2,12 @@
 
 ## 1. Business facts that need confirmation
 
-The site publishes **only** confirmed facts: the business name, the phone/WhatsApp number (+91 97467 33133), the logo, the product list and the tagline. Everything below was left out on purpose. To add a fact once it is confirmed, set it in `src/config/site.ts`. The website shows each field only when it has a value.
+The site publishes **only** confirmed facts: the business name, the phone/WhatsApp number (+91 97467 33133), the email address (assurexinternationaltraders@gmail.com), the logo, the product list and the tagline. Everything below was left out on purpose. To add a fact once it is confirmed, set it in `src/config/site.ts`. The website shows each field only when it has a value.
 
 | Item | Where to set | Status |
 | --- | --- | --- |
-| Verified business email | `siteConfig.email` + `ENQUIRY_TO_EMAIL` | **Missing** — required for email delivery of enquiries |
+| Business email | `siteConfig.email` | **Confirmed** — assurexinternationaltraders@gmail.com |
+| FormSubmit activation | Click "Activate Form" in the FormSubmit email sent to the inbox on 18 October 2026 | **Required once** before online enquiries are delivered |
 | Registered business address | `siteConfig.address` | Missing |
 | Legal entity type / registration number | Legal pages | Missing |
 | GST number, IEC (Importer-Exporter Code) | `siteConfig.certifications` | Missing |
@@ -22,8 +23,8 @@ The site publishes **only** confirmed facts: the business name, the phone/WhatsA
 
 See `.env.example`.
 
-- **Enquiry delivery (required for online forms):** `RESEND_API_KEY`, `ENQUIRY_TO_EMAIL` and `ENQUIRY_FROM_EMAIL` (the sending domain must be verified in Resend). An alternative or addition is `ENQUIRY_WEBHOOK_URL`.
-  Until one of these is set, the forms validate input and then honestly tell the buyer the form can't deliver yet. They offer a one-tap WhatsApp hand-off with the enquiry text pre-filled. No fake "success" message is ever shown.
+- **Enquiry delivery:** by default, enquiries are emailed to `siteConfig.email` through FormSubmit (formsubmit.co), a free form-to-email relay that needs no API key. Each email has a reference number and reply-to set to the buyer, and includes any specification file as an attachment. FormSubmit delivers only after the inbox owner clicks the one-time **Activate Form** link. Until then the site honestly reports that it can't deliver and offers a pre-filled WhatsApp hand-off.
+  Optional extra channels: Resend (`RESEND_API_KEY`, `ENQUIRY_TO_EMAIL`, `ENQUIRY_FROM_EMAIL` from a verified domain) and/or `ENQUIRY_WEBHOOK_URL`. Set `FORMSUBMIT_DISABLED=true` to switch FormSubmit off once another channel is in place. No fake "success" message is ever shown.
 - `NEXT_PUBLIC_SITE_URL`: the canonical domain. Change it when a custom domain is connected, then redeploy so canonicals, the sitemap and robots.txt update.
 - `NEXT_PUBLIC_GA_MEASUREMENT_ID`: optional GA4. It loads only after cookie consent. Events: `generate_lead`, `whatsapp_click`, `phone_click`. Form contents are never sent.
 - `GOOGLE_SITE_VERIFICATION`: the Search Console HTML-tag token.

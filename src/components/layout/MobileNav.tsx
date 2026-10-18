@@ -3,18 +3,26 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowRight, Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { PhoneLink, WhatsAppLink } from "@/components/shared/ContactLinks";
+import { EmailLink, PhoneLink, WhatsAppLink } from "@/components/shared/ContactLinks";
 import { siteConfig } from "@/config/site";
 import { mainNav, resourceNav } from "@/lib/data";
+import { getLenis } from "@/lib/smooth-scroll";
 import { cn } from "@/lib/utils";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const close = () => setOpen(false);
+
+  useEffect(() => {
+    const lenis = getLenis();
+    if (!lenis) return;
+    if (open) lenis.stop();
+    else lenis.start();
+  }, [open]);
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -24,7 +32,7 @@ export function MobileNav() {
       >
         <Menu className="size-5" aria-hidden="true" />
       </SheetTrigger>
-      <SheetContent side="right" className="w-[88vw] max-w-sm gap-0 overflow-y-auto bg-white p-0">
+      <SheetContent side="right" data-lenis-prevent className="w-[88vw] max-w-sm gap-0 overflow-y-auto bg-white p-0">
         <div className="border-b border-line px-5 pt-5 pb-4">
           <Image
             src={siteConfig.logo.lockup.src}
@@ -98,6 +106,7 @@ export function MobileNav() {
           </Link>
           <WhatsAppLink className="flex min-h-11 items-center justify-center gap-2 border border-gold/60 px-5 py-3 text-[0.8rem] font-semibold tracking-[0.14em] uppercase" />
           <PhoneLink className="flex items-center justify-center gap-2 pt-1 text-sm text-champagne/85" />
+          <EmailLink className="flex items-center justify-center gap-2 text-sm text-champagne/85" />
         </div>
       </SheetContent>
     </Sheet>

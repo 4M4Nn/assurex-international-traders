@@ -161,7 +161,7 @@ export const homeContent = {
     facts: [
       { label: "Product groups", value: "Onions · Rice · Spices" },
       { label: "Rice varieties for enquiry", value: "5" },
-      { label: "Direct line", value: "+91 97467 33133" },
+      { label: "Direct line", value: "+91 97467 33133" },
     ],
   },
   intro: {
@@ -181,7 +181,7 @@ export const homeContent = {
     { term: "Country", detail: "India" },
     { term: "Products", detail: "Onions, rice (Vadi Matta, Basmati, IR 64, Parboiled, Sona Masoori), green cardamom, black pepper, nutmeg, mace" },
     { term: "Enquiries accepted", detail: "Bulk and wholesale supply, export quotations, specifications, packaging and private label" },
-    { term: "Contact", detail: "+91 97467 33133 (telephone and WhatsApp)" },
+    { term: "Contact", detail: "+91 97467 33133 (telephone and WhatsApp) · assurexinternationaltraders@gmail.com" },
   ],
   productsSection: {
     eyebrow: "Product portfolio",

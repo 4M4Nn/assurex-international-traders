@@ -6,6 +6,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Analytics } from "@/components/shared/Analytics";
 import { RevealObserver } from "@/components/shared/RevealObserver";
+import { ScrollEffects } from "@/components/shared/ScrollEffects";
+import { SmoothScroll } from "@/components/shared/SmoothScroll";
 import { siteConfig } from "@/config/site";
 import { homeContent } from "@/lib/data";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
@@ -56,6 +58,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </main>
         <Footer />
         <MobileActionBar />
+        <SmoothScroll />
+        <ScrollEffects />
         <RevealObserver />
         <Analytics measurementId={siteConfig.analytics.gaMeasurementId} />
       </body>

@@ -81,6 +81,7 @@ export function ProductPageView({ product, crumbs }: ProductPageViewProps) {
                   priority
                   sizes="(min-width: 1024px) 520px, 92vw"
                   className="object-cover"
+                  data-zoom
                 />
               </div>
               {product.secondaryImage ? (
@@ -139,7 +140,7 @@ export function ProductPageView({ product, crumbs }: ProductPageViewProps) {
                   </div>
                 ) : null}
                 {section.slot === "rice-grid" ? (
-                  <div className="mt-8 grid gap-6 sm:grid-cols-2">
+                  <div className="mt-8 grid gap-6 sm:grid-cols-2" data-stagger>
                     {riceVarieties.map((variety, idx) => (
                       <ProductCard key={variety.slug} product={variety} index={idx} sizes="(min-width: 1024px) 24vw, (min-width: 640px) 45vw, 92vw" />
                     ))}

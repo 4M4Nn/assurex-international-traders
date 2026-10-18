@@ -4,7 +4,7 @@ import { EnquiryForm } from "@/components/forms/EnquiryForm";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ButtonLink } from "@/components/shared/ButtonLink";
-import { PhoneLink, WhatsAppLink } from "@/components/shared/ContactLinks";
+import { EmailLink, PhoneLink, WhatsAppLink } from "@/components/shared/ContactLinks";
 import { siteConfig } from "@/config/site";
 import { buildMetadata, webPageSchema } from "@/lib/seo";
 
@@ -12,7 +12,7 @@ const page = {
   path: "/contact-us/",
   seoTitle: "Contact Assurex International Traders | Product Enquiries",
   metaDescription:
-    "Contact Assurex International Traders about Indian onions, rice and spices. Call or WhatsApp +91 97467 33133 or send your product enquiry online.",
+    "Contact Assurex International Traders about Indian onions, rice and spices. Call or WhatsApp +91 97467 33133, email us, or send your product enquiry online.",
 };
 
 const checklist = [
@@ -55,6 +55,8 @@ export default function ContactPage() {
               >
                 {siteConfig.phone.display}
               </a>
+              <p className="mt-6 text-[0.7rem] font-semibold tracking-[0.24em] text-gold-ink uppercase">Email</p>
+              <EmailLink className="mt-2 flex items-center gap-2 text-lg font-semibold text-forest hover:text-emerald-deep" iconClassName="text-gold-ink" />
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <WhatsAppLink className="inline-flex min-h-11 flex-1 items-center justify-center gap-2 bg-forest px-5 py-3 text-[0.78rem] font-semibold tracking-[0.12em] text-white uppercase hover:bg-emerald-deep" />
                 <PhoneLink

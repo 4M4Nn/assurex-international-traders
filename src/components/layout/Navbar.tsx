@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { DesktopNav } from "@/components/layout/DesktopNav";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { buttonLinkClass } from "@/components/shared/ButtonLink";
-import { PhoneLink, WhatsAppLink } from "@/components/shared/ContactLinks";
+import { EmailLink, PhoneLink, WhatsAppLink } from "@/components/shared/ContactLinks";
 import { siteConfig } from "@/config/site";
 
 function TopBar() {
@@ -20,6 +20,7 @@ function TopBar() {
           ))}
         </p>
         <div className="flex w-full items-center justify-between gap-5 md:w-auto md:justify-end">
+          <EmailLink className="hidden items-center gap-2 font-medium tracking-wide hover:text-gold xl:inline-flex" iconClassName="size-3.5 text-gold" />
           <PhoneLink className="inline-flex items-center gap-2 font-medium tracking-wide hover:text-gold" iconClassName="size-3.5 text-gold" />
           <WhatsAppLink
             label="WhatsApp"

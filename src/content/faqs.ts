@@ -212,7 +212,7 @@ export const faqCategories: FaqCategory[] = [
     items: [
       {
         q: "How do I contact Assurex?",
-        a: "Call or WhatsApp +91 97467 33133, or use the [contact form](/contact-us/).",
+        a: "Call or WhatsApp +91 97467 33133, email assurexinternationaltraders@gmail.com, or use the [contact form](/contact-us/).",
       },
       {
         q: "What should I include in my first enquiry?",

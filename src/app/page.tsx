@@ -3,6 +3,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Hero } from "@/components/sections/Hero";
 import {
   BuyersSection,
+  ParallaxBand,
   EnquirySection,
   HomeFaqSection,
   InsightsSection,
@@ -40,6 +41,7 @@ export default function HomePage() {
       <RiceSection />
       <SourcingSection />
       <BuyersSection />
+      <ParallaxBand />
       <ProcessSection />
       <WhySection />
       <EnquirySection />

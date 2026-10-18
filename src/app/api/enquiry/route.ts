@@ -14,9 +14,12 @@ import {
 /**
  * Enquiry endpoint.
  *
- * Delivery channels (configure at least one in the hosting environment):
- *  - Email via Resend: RESEND_API_KEY, ENQUIRY_TO_EMAIL, ENQUIRY_FROM_EMAIL
- *  - Webhook (e.g. a CRM or automation tool): ENQUIRY_WEBHOOK_URL
+ * Delivery channels:
+ *  - Email relay via FormSubmit to the business inbox (siteConfig.email, or
+ *    ENQUIRY_TO_EMAIL). Works without an API key once the inbox owner has
+ *    clicked FormSubmit's one-time "Activate Form" link.
+ *  - Email via Resend (optional): RESEND_API_KEY, ENQUIRY_TO_EMAIL, ENQUIRY_FROM_EMAIL
+ *  - Webhook (optional, e.g. a CRM or automation tool): ENQUIRY_WEBHOOK_URL
  *
  * A success response is returned only when at least one channel accepted the
  * enquiry. Otherwise the client offers a WhatsApp hand-off instead.
@@ -61,7 +64,7 @@ interface Delivery {
   variant: FormVariant;
   values: EnquiryValues;
   sourcePage: string;
-  file: { name: string; type: string; base64: string } | null;
+  file: { name: string; type: string; base64: string; blob: Blob } | null;
 }
 
 function displayValue(field: (typeof enquiryFields)[number], value: string) {
@@ -101,6 +104,36 @@ async function sendEmail(d: Delivery): Promise<boolean> {
     }),
   });
   return res.ok;
+}
+
+function inboxAddress(): string | null {
+  return process.env.ENQUIRY_TO_EMAIL || siteConfig.email;
+}
+
+async function sendFormSubmit(d: Delivery): Promise<boolean> {
+  const inbox = inboxAddress();
+  if (!inbox || process.env.FORMSUBMIT_DISABLED === "true") return false;
+  const body = new FormData();
+  const productLabel = d.values.product ? labelFor("product", d.values.product) : "General";
+  body.append("_subject", `[${d.reference}] ${d.variant === "quote" ? "Quote request" : "Website enquiry"} — ${productLabel} — ${d.values.company || d.values.fullName}`);
+  body.append("_template", "table");
+  body.append("_captcha", "false");
+  body.append("_replyto", d.values.email);
+  body.append("Reference", d.reference);
+  body.append("Form", d.variant);
+  body.append("Submitted from", d.sourcePage);
+  for (const f of enquiryFields) {
+    if (d.values[f]) body.append(fieldLabels[f], displayValue(f, d.values[f]));
+  }
+  if (d.file) body.append("attachment", d.file.blob, d.file.name);
+  const res = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(inbox)}`, {
+    method: "POST",
+    headers: { Accept: "application/json", Origin: siteConfig.url, Referer: `${siteConfig.url}/contact-us/` },
+    body,
+  });
+  if (!res.ok) return false;
+  const data = (await res.json().catch(() => null)) as { success?: string | boolean } | null;
+  return data?.success === true || data?.success === "true";
 }
 
 async function sendWebhook(d: Delivery): Promise<boolean> {
@@ -169,7 +202,13 @@ export async function POST(request: Request) {
     if (problem) errors.file = problem;
     else {
       const safeName = upload.name.replace(/[^\w.\- ]+/g, "_").slice(0, 120);
-      file = { name: safeName, type: upload.type, base64: Buffer.from(await upload.arrayBuffer()).toString("base64") };
+      const bytes = await upload.arrayBuffer();
+      file = {
+        name: safeName,
+        type: upload.type,
+        base64: Buffer.from(bytes).toString("base64"),
+        blob: new Blob([bytes], { type: upload.type || "application/octet-stream" }),
+      };
     }
   }
 
@@ -186,7 +225,7 @@ export async function POST(request: Request) {
   };
 
   const configured = Boolean(
-    (process.env.RESEND_API_KEY && process.env.ENQUIRY_TO_EMAIL) || process.env.ENQUIRY_WEBHOOK_URL,
+    inboxAddress() || (process.env.RESEND_API_KEY && process.env.ENQUIRY_TO_EMAIL) || process.env.ENQUIRY_WEBHOOK_URL,
   );
   if (!configured) {
     console.warn(`[enquiry] delivery not configured; enquiry not stored (form=${variant}).`);
@@ -198,7 +237,7 @@ export async function POST(request: Request) {
     });
   }
 
-  const results = await Promise.allSettled([sendEmail(delivery), sendWebhook(delivery)]);
+  const results = await Promise.allSettled([sendFormSubmit(delivery), sendEmail(delivery), sendWebhook(delivery)]);
   const delivered = results.some((r) => r.status === "fulfilled" && r.value);
 
   if (!delivered) {

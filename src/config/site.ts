@@ -36,8 +36,8 @@ export const siteConfig = {
     baseUrl: "https://wa.me/919746733133",
   },
 
-  /** Not yet confirmed — leave null until a verified business address exists. */
-  email: null as string | null,
+  /** Confirmed business email (receives website enquiries). */
+  email: "assurexinternationaltraders@gmail.com" as string | null,
   /** Not yet confirmed — leave null until a verified registered address exists. */
   address: null as {
     street: string;

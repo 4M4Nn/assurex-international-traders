@@ -22,7 +22,6 @@ export function ProductCard({
   const Heading = headingLevel;
   return (
     <article
-      data-reveal
       className={cn("group relative flex flex-col border border-line bg-white transition-colors hover:border-gold", className)}
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-mist">

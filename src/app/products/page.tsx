@@ -89,6 +89,7 @@ export default function ProductsPage() {
                     sizes="(min-width: 1024px) 45vw, 92vw"
                     className="object-cover"
                     priority={i === 0}
+                    data-zoom
                   />
                 </div>
                 <div data-reveal>

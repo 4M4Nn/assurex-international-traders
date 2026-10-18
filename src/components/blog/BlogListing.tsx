@@ -74,7 +74,7 @@ export function BlogHero({ crumbs, eyebrow, h1, intro, activeCategory }: BlogHer
 
 export function ArticleGrid({ items }: { items: Article[] }) {
   return (
-    <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3" data-stagger>
       {items.map((article) => (
         <ArticleCard key={article.slug} article={article} />
       ))}
