@@ -13,7 +13,7 @@ const page = {
   path: "/request-a-quote/",
   seoTitle: "Request an Agricultural Export Quote | Assurex",
   metaDescription:
-    "Request a quotation for Indian onions, rice, cardamom, black pepper, nutmeg or mace. Share product, quantity, packaging, destination and specifications.",
+    "Request a quotation for Indian green coffee beans, rice, cardamom, black pepper, nutmeg or mace. Share product, quantity, packaging, destination and specifications.",
 };
 
 export const metadata: Metadata = buildMetadata({

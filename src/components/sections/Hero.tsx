@@ -8,7 +8,7 @@ import { images } from "@/content/images";
 import { homeContent } from "@/lib/data";
 
 const rfqProducts = [
-  { key: "onion" as const, label: "Onions", image: images.onionsWhole },
+  { key: "coffee-beans" as const, label: "Coffee Beans", image: images.coffeeBeans },
   { key: "rice" as const, label: "Rice", image: images.basmati },
   { key: "cardamom" as const, label: "Cardamom", image: images.cardamom },
   { key: "black-pepper" as const, label: "Pepper", image: images.pepper },

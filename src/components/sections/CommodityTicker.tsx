@@ -1,5 +1,5 @@
 const items = [
-  "Indian Red Onions",
+  "Indian Green Coffee Beans",
   "Kerala Vadi Matta Rice",
   "Basmati Rice",
   "IR 64 Rice",

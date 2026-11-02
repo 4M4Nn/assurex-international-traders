@@ -32,7 +32,7 @@ Name the product and, where relevant, the variety or type: for example "Kerala V
 List measurable parameters with limits:
 
 - rice — broken percentage, moisture, grain length, foreign matter
-- onions — size band, colour, defect tolerances
+- green coffee beans — screen size, moisture, defect count, processing method
 - spices — size or density, colour, moisture, foreign matter
 
 Attach your specification sheet if you have one.
@@ -95,7 +95,7 @@ Our [request a quote form](/request-a-quote/) follows this checklist and accepts
       a: "It helps, but it is not essential. If you do not have one, describe the parameters that matter and a supplier can help you build a specification.",
     },
   ],
-  relatedProducts: ["/products/", "/products/rice/", "/products/onions/"],
+  relatedProducts: ["/products/", "/products/rice/", "/products/coffee-beans/"],
   relatedArticles: [
     "fob-vs-cif-understanding-common-trade-terms",
     "export-documentation-introduction-for-commodity-buyers",
@@ -178,7 +178,7 @@ Tell us your preferred term in your [quote request](/request-a-quote/). This art
   relatedArticles: [
     "export-documentation-introduction-for-commodity-buyers",
     "what-to-include-in-an-rfq",
-    "indian-red-onions-commercial-buyers-guide",
+    "indian-green-coffee-beans-buyers-guide",
   ],
   sources: [{ label: "International Chamber of Commerce — Incoterms® rules", url: "https://iccwbo.org/business-solutions/incoterms-rules/" }],
 };
@@ -223,7 +223,7 @@ Certifies the country where the goods were produced. It may be needed for custom
 
 ### Phytosanitary certificate
 
-Most countries require a phytosanitary certificate for plant products such as onions, rice and many spices. In India, these are issued by the National Plant Protection Organisation under the [Directorate of Plant Protection, Quarantine & Storage](https://ppqs.gov.in/), based on the importing country's requirements.
+Most countries require a phytosanitary certificate for plant products such as green coffee beans, rice and many spices. In India, these are issued by the National Plant Protection Organisation under the [Directorate of Plant Protection, Quarantine & Storage](https://ppqs.gov.in/), based on the importing country's requirements.
 
 ### Fumigation certificate
 
@@ -259,7 +259,7 @@ See our [export process](/export-process/) or [send your import requirements](/r
   relatedArticles: [
     "fob-vs-cif-understanding-common-trade-terms",
     "what-to-include-in-an-rfq",
-    "indian-red-onions-commercial-buyers-guide",
+    "indian-green-coffee-beans-buyers-guide",
   ],
   sources: [
     { label: "Directorate General of Foreign Trade", url: "https://www.dgft.gov.in/" },

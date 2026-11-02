@@ -1,5 +1,5 @@
 export type ProductKey =
-  | "onion"
+  | "coffee-beans"
   | "rice"
   | "cardamom"
   | "black-pepper"
@@ -76,7 +76,7 @@ export interface QuickAnswer {
 export interface ProductContent {
   slug: string;
   path: string;
-  kind: "product" | "rice-category" | "rice-variety";
+  kind: "product" | "rice-category" | "rice-variety" | "variety";
   name: string;
   cardTitle: string;
   eyebrow: string;
@@ -121,7 +121,7 @@ export interface InfoPageContent {
 
 export type BlogCategoryKey =
   | "rice"
-  | "onions"
+  | "coffee"
   | "spices"
   | "export-guides"
   | "buyer-guides"

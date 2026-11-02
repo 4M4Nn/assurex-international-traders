@@ -18,7 +18,7 @@ export const faqCategories: FaqCategory[] = [
     items: [
       {
         q: "What does Assurex International Traders do?",
-        a: "Assurex International Traders is an India-based international trading business. We handle enquiries from commercial buyers for Indian onions, rice (Vadi Matta, Basmati, IR 64, parboiled and Sona Masoori) and spices (green cardamom, black pepper, nutmeg and mace), and coordinate sourcing, specifications, packing, documents and shipment as agreed.",
+        a: "Assurex International Traders is an India-based international trading business. We handle enquiries from commercial buyers for Indian green coffee beans (Arabica and Robusta), rice (Vadi Matta, Basmati, IR 64, parboiled and Sona Masoori) and spices (green cardamom, black pepper, nutmeg and mace), and coordinate sourcing, specifications, packing, documents and shipment as agreed.",
       },
       {
         q: "Are you a manufacturer, farmer or trader?",
@@ -85,20 +85,20 @@ export const faqCategories: FaqCategory[] = [
     ],
   },
   {
-    id: "onions",
-    heading: "Onion Grading and Packaging",
+    id: "coffee",
+    heading: "Green Coffee Beans — Grades, Origins and Certifications",
     items: [
       {
-        q: "How are onions graded?",
-        a: "Mainly by size band in millimetres, colour and condition, with tolerances for defects such as sprouting or damage. See [onion grades and sizes](/blog/onion-grades-and-size-specifications-explained/).",
+        q: "Which Indian coffee origins can I source through Assurex?",
+        a: "We handle enquiries for Indian Arabica from Coorg (Kodagu), Chikmagalur and Araku Valley, and Indian Robusta from Wayanad and Karnataka. Both species are shade-grown. See [Indian green coffee beans](/products/coffee-beans/).",
       },
       {
-        q: "What onion packing is available?",
-        a: "Mesh bags are standard. 18 kg and 20 kg mesh bags are common options, subject to supplier availability and your agreement.",
+        q: "Are organic-certified lots available for Indian green coffee?",
+        a: "Yes. Organic lots certified under India's NPOP standard are available on eligible Arabica estates and cooperatives. NPOP is accepted under EU organic equivalency and the US NOP equivalency arrangement. Confirm certificate scope and lot eligibility at enquiry.",
       },
       {
-        q: "Can Indian onion exports be restricted?",
-        a: "Yes, at times. India has used measures such as minimum export prices, duties and temporary restrictions on onion exports. We check the policy in force when quoting.",
+        q: "What packing is standard for green coffee bean exports?",
+        a: "Standard packing is 60 kg jute bags with a GrainPro hermetic inner liner (specialty) or polypropylene liner (commodity). A 20-foot container holds approximately 16.5 MT; a 40-foot approximately 33 MT.",
       },
     ],
   },

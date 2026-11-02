@@ -12,7 +12,7 @@ const page = {
   path: "/contact-us/",
   seoTitle: "Contact Assurex International Traders | Product Enquiries",
   metaDescription:
-    "Contact Assurex International Traders about Indian onions, rice and spices. Call or WhatsApp +91 97467 33133, email us, or send your product enquiry online.",
+    "Contact Assurex International Traders about Indian green coffee beans, rice and spices. Call or WhatsApp +91 97467 33133, email us, or send your product enquiry online.",
 };
 
 const checklist = [

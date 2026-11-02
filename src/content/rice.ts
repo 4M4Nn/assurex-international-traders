@@ -798,7 +798,7 @@ This table is a general guide. Market preferences vary, and specifications are a
       a: "Typically a commercial invoice, packing list, transport document, certificate of origin and phytosanitary certificate, plus any destination-specific certificates. See [export documentation](/blog/export-documentation-introduction-for-commodity-buyers/).",
     },
   ],
-  related: ["/products/onions/", "/products/cardamom/", "/packaging-and-private-label/"],
+  related: ["/products/coffee-beans/", "/products/cardamom/", "/packaging-and-private-label/"],
   relatedArticles: [
     "vadi-matta-vs-basmati-rice-key-differences",
     "rice-moisture-and-broken-percentage-specifications",

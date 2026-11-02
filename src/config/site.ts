@@ -17,7 +17,7 @@ export const siteConfig = {
   tagline: "Global Trade | Trusted Partnership | Sustainable Growth",
   taglineParts: ["Global Trade", "Trusted Partnership", "Sustainable Growth"],
   description:
-    "Assurex International Traders is an India-based international trading business that handles enquiries for Indian onions, rice and selected spices — green cardamom, black pepper, nutmeg and mace — for importers, distributors, wholesalers and other commercial buyers.",
+    "Assurex International Traders is an India-based international trading business that handles enquiries for Indian green coffee beans (Arabica and Robusta), rice and selected spices — green cardamom, black pepper, nutmeg and mace — for importers, distributors, wholesalers and other commercial buyers.",
   businessCategory: "International trading of agricultural commodities",
   country: "India",
   countryCode: "IN",
@@ -61,7 +61,7 @@ export const siteConfig = {
 
   /** Product categories the business accepts enquiries for. */
   productCategories: [
-    "Indian onions",
+    "Indian green coffee beans",
     "Rice (Vadi Matta, Basmati, IR 64, Parboiled, Sona Masoori)",
     "Green cardamom",
     "Black pepper",

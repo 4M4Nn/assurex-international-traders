@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { articles, blogCategories, totalPages } from "@/content/blog";
 import { allProductPages } from "@/content/catalog";
+import { countryMarkets } from "@/content/markets-countries";
 import { infoPages } from "@/content/pages";
 import { legalPages } from "@/content/legal";
 import { absoluteUrl, siteConfig } from "@/config/site";
@@ -19,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/products/", 0.9),
     ...allProductPages.map((p) => entry(p.path, p.kind === "rice-variety" ? 0.8 : 0.9)),
     ...infoPages.map((p) => entry(p.path, 0.7)),
+    ...countryMarkets.map((m) => entry(m.path, 0.8)),
     entry("/faq/", 0.7),
     entry("/contact-us/", 0.8),
     entry("/request-a-quote/", 0.8),

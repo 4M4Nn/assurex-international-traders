@@ -85,7 +85,7 @@ export function organizationSchema() {
     ...(siteConfig.email ? { email: siteConfig.email } : {}),
     ...(siteConfig.socialLinks.length ? { sameAs: siteConfig.socialLinks.map((s) => s.url) } : {}),
     knowsAbout: [
-      "Indian red onions",
+      "Indian green coffee beans",
       "Kerala Vadi Matta rice",
       "Basmati rice",
       "IR 64 rice",

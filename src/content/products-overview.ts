@@ -1,14 +1,14 @@
 export const productsOverview = {
   path: "/products/",
-  seoTitle: "Indian Onions, Rice and Spices | Assurex Products",
+  seoTitle: "Indian Green Coffee Beans, Rice and Spices | Assurex Products",
   metaDescription:
-    "Explore the agricultural products Assurex International Traders handles: Indian red onions, five rice varieties, green cardamom, black pepper, nutmeg and mace.",
+    "Explore the agricultural products Assurex International Traders handles: Indian green coffee beans (Arabica and Robusta), five rice varieties, green cardamom, black pepper, nutmeg and mace.",
   eyebrow: "Products",
   h1: "Explore Our Agricultural Products",
   intro:
     "A focused range of Indian agricultural commodities, each traded on measurable specifications. Choose a product to see what it is, how it is graded, how it is packed and what to include in your enquiry.",
   headings: {
-    onion: "Indian Onions",
+    "coffee-beans": "Indian Green Coffee Beans",
     rice: "Indian Rice Varieties",
     cardamom: "Green Cardamom",
     "black-pepper": "Black Pepper",
@@ -16,7 +16,7 @@ export const productsOverview = {
     mace: "Mace",
   } as Record<string, string>,
   highlights: {
-    onion: ["Graded by size band, colour and condition", "Mesh-bag packing such as 18 kg or 20 kg", "Phytosanitary certificate per shipment"],
+    "coffee-beans": ["Arabica (Coorg, Araku Valley) and Robusta (Wayanad, Karnataka)", "60 kg jute / GrainPro hermetic packing", "Organic (NPOP/NOP), Rainforest Alliance, Fair Trade available"],
     rice: ["Vadi Matta, Basmati, IR 64, Parboiled, Sona Masoori", "Raw, steamed or parboiled by variety", "Bulk bags, retail packs or private label"],
     cardamom: ["Graded by pod size (mm) and colour", "Litre weight and moisture agreed", "Lined packing to protect aroma"],
     "black-pepper": ["Grades such as MG1 and bolder TGEB", "Bulk density (g/L) and moisture agreed", "Residue and microbiological testing on request"],

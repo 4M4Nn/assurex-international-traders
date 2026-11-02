@@ -4,7 +4,14 @@ import type { NavLink, ProductKey, RiceVarietyKey } from "@/types";
 /* ---------------------------------------------------------- Navigation */
 
 export const productNav: NavLink[] = [
-  { label: "Onions", href: "/products/onions/" },
+  {
+    label: "Coffee Beans",
+    href: "/products/coffee-beans/",
+    children: [
+      { label: "Arabica Green Coffee", href: "/products/coffee-beans/arabica/" },
+      { label: "Robusta Green Coffee", href: "/products/coffee-beans/robusta/" },
+    ],
+  },
   {
     label: "Rice",
     href: "/products/rice/",
@@ -52,7 +59,9 @@ export const footerNav = {
   ],
   products: [
     { label: "All Products", href: "/products/" },
-    { label: "Indian Red Onions", href: "/products/onions/" },
+    { label: "Green Coffee Beans", href: "/products/coffee-beans/" },
+    { label: "Arabica Coffee", href: "/products/coffee-beans/arabica/" },
+    { label: "Robusta Coffee", href: "/products/coffee-beans/robusta/" },
     { label: "Green Cardamom", href: "/products/cardamom/" },
     { label: "Black Pepper", href: "/products/black-pepper/" },
     { label: "Nutmeg", href: "/products/nutmeg/" },
@@ -77,7 +86,7 @@ export const footerNav = {
 /* ------------------------------------------------------ Form options */
 
 export const productOptions: { value: ProductKey; label: string }[] = [
-  { value: "onion", label: "Onion" },
+  { value: "coffee-beans", label: "Green Coffee Beans" },
   { value: "rice", label: "Rice" },
   { value: "cardamom", label: "Cardamom" },
   { value: "black-pepper", label: "Black Pepper" },
@@ -144,22 +153,22 @@ export const formCopy = {
 export const homeContent = {
   seoTitle: "Indian Agricultural Commodity Exporters | Assurex International Traders",
   metaDescription:
-    "Explore Indian onions, rice, cardamom, black pepper, nutmeg and mace with Assurex International Traders. Enquire about bulk sourcing and export requirements.",
+    "Explore Indian green coffee beans, rice, cardamom, black pepper, nutmeg and mace with Assurex International Traders. Enquire about bulk sourcing and export requirements.",
   hero: {
     eyebrow: "India · Agricultural Commodities · B2B Trade",
     h1: "Indian Agricultural Commodities for Global Markets",
-    lede: "Discover sourcing opportunities for Indian onions, rice and selected spices through Assurex International Traders.",
+    lede: "Discover sourcing opportunities for Indian green coffee beans, rice and selected spices through Assurex International Traders.",
     primaryCta: { label: "Request a Quote", href: "/request-a-quote/" },
     secondaryCta: { label: "Explore Our Products", href: "/products/" },
     image: images.port,
     tiles: [
-      { label: "Red Onions", image: images.onionsWhole, href: "/products/onions/" },
+      { label: "Green Coffee", image: images.coffeeBeans, href: "/products/coffee-beans/" },
       { label: "Rice", image: images.basmati, href: "/products/rice/" },
       { label: "Cardamom", image: images.cardamom, href: "/products/cardamom/" },
       { label: "Black Pepper", image: images.pepper, href: "/products/black-pepper/" },
     ],
     facts: [
-      { label: "Product groups", value: "Onions · Rice · Spices" },
+      { label: "Product groups", value: "Coffee · Rice · Spices" },
       { label: "Rice varieties for enquiry", value: "5" },
       { label: "Direct line", value: "+91 97467 33133" },
     ],
@@ -170,7 +179,7 @@ export const homeContent = {
     statement:
       "We connect commercial buyers with Indian agricultural products — and keep every specification, quantity and term in writing before anything ships.",
     paragraphs: [
-      "Assurex International Traders is an India-based trading business focused on a deliberately narrow range of agricultural commodities: Indian red onions, five rice varieties, and four spices — green cardamom, black pepper, nutmeg and mace.",
+      "Assurex International Traders is an India-based trading business focused on a deliberately narrow range of agricultural commodities: Indian green coffee beans (Arabica and Robusta), five rice varieties, and four spices — green cardamom, black pepper, nutmeg and mace.",
       "Our model is requirement-led. A buyer tells us what they need — product, grade, quantity, packing and destination — and we coordinate with suitable suppliers to check availability and align the specification before a quotation is issued.",
       "We put clear communication ahead of everything else: what can be confirmed, what still depends on supplier availability, and which terms need to be agreed in the contract. That is how long-term trading relationships are built.",
     ],
@@ -179,7 +188,7 @@ export const homeContent = {
     { term: "Company", detail: "Assurex International Traders" },
     { term: "Business", detail: "International trading of agricultural commodities" },
     { term: "Country", detail: "India" },
-    { term: "Products", detail: "Onions, rice (Vadi Matta, Basmati, IR 64, Parboiled, Sona Masoori), green cardamom, black pepper, nutmeg, mace" },
+    { term: "Products", detail: "Green coffee beans (Arabica, Robusta), rice (Vadi Matta, Basmati, IR 64, Parboiled, Sona Masoori), green cardamom, black pepper, nutmeg, mace" },
     { term: "Enquiries accepted", detail: "Bulk and wholesale supply, export quotations, specifications, packaging and private label" },
     { term: "Contact", detail: "+91 97467 33133 (telephone and WhatsApp) · assurexinternationaltraders@gmail.com" },
   ],

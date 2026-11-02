@@ -355,7 +355,7 @@ export function EnquiryForm({ variant, defaultProduct, defaultVariety, sourcePag
               {selectField("product", productOptions, "Choose a product")}
               {values.product === "rice"
                 ? selectField("riceVariety", riceVarietyOptions, "Choose a rice variety")
-                : textField("productVariety", { placeholder: "e.g. 8 mm cardamom, 55 mm+ onions" })}
+                : textField("productVariety", { placeholder: "e.g. 8 mm cardamom, APA screen 17 coffee" })}
             </div>
           </fieldset>
 

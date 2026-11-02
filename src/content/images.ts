@@ -7,17 +7,23 @@ import type { ImageAsset, ImageCredit } from "@/types";
  * facility or shipment. Attribution is published on /image-credits/.
  */
 export const images = {
-  onionsPile: {
-    src: "/images/indian-red-onions-bulk-export.webp",
-    alt: "A heap of whole red onions with papery purple-red skins",
+  coffeeBeans: {
+    src: "/images/green-coffee-beans-unroasted.webp",
+    alt: "Green unroasted coffee beans spread out for inspection",
     width: 1920,
-    height: 2560,
+    height: 1440,
   },
-  onionsWhole: {
-    src: "/images/whole-red-onions.webp",
-    alt: "Three whole red onions on a white background",
-    width: 2560,
-    height: 2273,
+  coffeeArabica: {
+    src: "/images/raw-coffee-beans-arabica.webp",
+    alt: "Raw Arabica coffee beans ready for export grading",
+    width: 960,
+    height: 1280,
+  },
+  coffeeBulk: {
+    src: "/images/coffee-beans-green-bulk.webp",
+    alt: "A mass of green unroasted coffee beans for bulk export",
+    width: 1024,
+    height: 768,
   },
   mattaGrains: {
     src: "/images/vadi-matta-rice-grains.webp",
@@ -156,8 +162,9 @@ export const imageCredits: ImageCredit[] = [
   { file: "vizhinjam-port-night.webp", subject: "Vizhinjam port at night", author: "RAJESH INDIA", license: "CC BY 4.0", licenseUrl: "https://creativecommons.org/licenses/by/4.0/", sourceUrl: "https://commons.wikimedia.org/wiki/File:VZM_PORT_AT_NIGHT1.jpg", modified: "Resized, converted to WebP" },
   { file: "aerial-cargo-ship.webp", subject: "Aerial photograph of a cargo ship", author: "Wilfredor", license: "CC BY-SA 3.0", licenseUrl: CC_BY_SA_3, sourceUrl: "https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_a_cargo_ship.jpg", modified: "Resized, converted to WebP" },
   { file: "container-ship-vizhinjam-port.webp", subject: "Container ship at Vizhinjam port", author: "Giridharseeman", license: "CC0 1.0", licenseUrl: CC0, sourceUrl: "https://commons.wikimedia.org/wiki/File:MSC_IRINA_TRIVANDRUM_PORT_HD.jpg", modified: "Resized, converted to WebP" },
-  { file: "indian-red-onions-bulk-export.webp", subject: "Red onions", author: "Gaurav Dhwaj Khadka", license: "CC BY-SA 4.0", licenseUrl: CC_BY_SA_4, sourceUrl: "https://commons.wikimedia.org/wiki/File:Red_Onions.jpg", modified: "Resized, converted to WebP" },
-  { file: "whole-red-onions.webp", subject: "Three whole red onions", author: "Anja", license: "CC BY-SA 4.0", licenseUrl: CC_BY_SA_4, sourceUrl: "https://commons.wikimedia.org/wiki/File:Three_whole_red_onions.jpg", modified: "Resized, converted to WebP" },
+  { file: "green-coffee-beans-unroasted.webp", subject: "Green (unroasted) coffee beans", author: "Julius Schorzman", license: "CC BY-SA 2.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/", sourceUrl: "https://commons.wikimedia.org/wiki/File:Unroasted_coffee.jpg", modified: "Resized, converted to WebP" },
+  { file: "raw-coffee-beans-arabica.webp", subject: "Raw Arabica coffee beans", author: "Peter Wilkin", license: "CC0 1.0", licenseUrl: CC0, sourceUrl: "https://commons.wikimedia.org/wiki/File:Raw_coffee_beans_2.jpg", modified: "Resized, converted to WebP" },
+  { file: "coffee-beans-green-bulk.webp", subject: "Unroasted green coffee beans in bulk", author: "Takeaway", license: "CC BY-SA 3.0", licenseUrl: CC_BY_SA_3, sourceUrl: "https://commons.wikimedia.org/wiki/File:Coffee_unroasted_beans.jpg", modified: "Resized, converted to WebP" },
   { file: "vadi-matta-rice-grains.webp", subject: "Matta rice", author: "Gaurav Dhwaj Khadka", license: "CC BY-SA 4.0", licenseUrl: CC_BY_SA_4, sourceUrl: "https://commons.wikimedia.org/wiki/File:Matta_Rice.jpg", modified: "Resized, converted to WebP" },
   { file: "kerala-matta-rice-bowl.webp", subject: "Kerala Matta rice", author: "Miansari66", license: "CC0 1.0", licenseUrl: CC0, sourceUrl: "https://commons.wikimedia.org/wiki/File:Kerala_Matta_Rice.jpg", modified: "Resized, converted to WebP" },
   { file: "indian-basmati-rice.webp", subject: "Basmati rice texture", author: "CNEcija12345", license: "CC BY-SA 4.0", licenseUrl: CC_BY_SA_4, sourceUrl: "https://commons.wikimedia.org/wiki/File:Basmati_rice_textureCNE_02.jpg", modified: "Resized, converted to WebP" },

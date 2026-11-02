@@ -5,11 +5,11 @@ export const aboutPage: InfoPageContent = {
   path: "/about-us/",
   seoTitle: "About Assurex International Traders | Indian Commodity Trading",
   metaDescription:
-    "Learn about Assurex International Traders, an India-based trading business handling enquiries for onions, rice and spices with a requirement-led sourcing approach.",
+    "Learn about Assurex International Traders, an India-based trading business handling enquiries for Indian green coffee beans, rice and spices with a requirement-led sourcing approach.",
   eyebrow: "About us",
   h1: "About Assurex International Traders",
   intro:
-    "Assurex International Traders is an India-based international trading business. We help commercial buyers source Indian onions, rice and selected spices — and we do it by agreeing the details first: specification, quantity, packing, documents and terms.",
+    "Assurex International Traders is an India-based international trading business. We help commercial buyers source Indian green coffee beans, rice and selected spices — and we do it by agreeing the details first: specification, quantity, packing, documents and terms.",
   image: images.spiceStore,
   layout: "editorial",
   schemaType: "AboutPage",
@@ -21,7 +21,7 @@ export const aboutPage: InfoPageContent = {
 
 We have chosen a focused product range rather than a long catalogue:
 
-- [Indian red onions](/products/onions/)
+- [Indian green coffee beans](/products/coffee-beans/) — Arabica and Robusta, shade-grown, from Coorg, Chikmagalur, Araku Valley and Wayanad
 - [Rice](/products/rice/) — Kerala Vadi Matta, Basmati, IR 64, parboiled and Sona Masoori
 - [Green cardamom](/products/cardamom/), [black pepper](/products/black-pepper/), [nutmeg](/products/nutmeg/) and [mace](/products/mace/)
 
@@ -41,7 +41,7 @@ Where a step depends on a third party — a laboratory, an inspection agency, a 
     {
       id: "products",
       heading: "Our Core Product Categories",
-      body: `**Onions.** Fresh red onions graded by size and condition, typically packed in mesh bags.
+      body: `**Green coffee beans.** Arabica and Robusta, shade-grown in India's Western Ghats — Coorg, Chikmagalur and Araku Valley for Arabica; Wayanad and Karnataka for Robusta. Available in standard commercial grades and specialty lots with organic, Rainforest Alliance and Fair Trade certification.
 
 **Rice.** Five varieties serving different markets — from Kerala's red Vadi Matta to long-grain Basmati, value-oriented IR 64, firm parboiled rice and lightweight Sona Masoori.
 
@@ -160,8 +160,8 @@ export const qualityPage: InfoPageContent = {
       heading: "Understanding Buyer Specifications",
       body: `A useful specification lists measurable parameters with limits and test methods. For example:
 
+- **Green coffee beans:** species (Arabica/Robusta), origin, processing method, screen size, moisture, defect count, certifications
 - **Rice:** variety, processing, grain length, broken percentage, moisture, foreign matter, residues
-- **Onions:** size band, colour, condition, defect tolerances, packing
 - **Spices:** size or density, colour, moisture, foreign matter, residues, microbiology, mycotoxins
 
 If you already have a specification sheet, share it with your enquiry. If not, we will work through the parameters with you. Our guide to [understanding specifications before signing a contract](/blog/what-to-include-in-an-rfq/) covers the basics.`,
@@ -188,7 +188,7 @@ We do not quote test results before a report exists, and we do not guarantee tha
     {
       id: "packaging",
       heading: "Packaging and Handling Considerations",
-      body: `Packaging protects quality in transit. Mesh bags help onions breathe; liners protect spices from moisture; strong woven bags protect rice during handling. Handling, ventilation and storage conditions are discussed for each shipment. See [packaging options](/packaging-and-private-label/).`,
+      body: `Packaging protects quality in transit. Jute bags with GrainPro liners protect green coffee beans from moisture; lined bags keep spices aromatic; strong woven bags protect rice during handling. Handling, ventilation and storage conditions are discussed for each shipment. See [packaging options](/packaging-and-private-label/).`,
     },
     {
       id: "compliance",
@@ -211,7 +211,7 @@ export const packagingPage: InfoPageContent = {
   path: "/packaging-and-private-label/",
   seoTitle: "Bulk Commodity Packaging and Private Label Enquiries | Assurex",
   metaDescription:
-    "Discuss bulk packaging and private-label options for rice, onions and spices: bag types, weights, liners, artwork, labelling compliance, quantities and lead times.",
+    "Discuss bulk packaging and private-label options for coffee beans, rice and spices: bag types, weights, liners, artwork, labelling compliance, quantities and lead times.",
   eyebrow: "Packaging and private label",
   h1: "Packaging and Private-Label Options for Commercial Buyers",
   intro:
@@ -233,9 +233,9 @@ Sizes, materials, printing, minimum quantities, lead times and food-contact requ
       body: `Rice is commonly shipped in woven polypropylene bags for bulk and wholesale channels, while retail rice may be packed in printed laminated bags, non-woven bags or jute bags. Key points to agree include bag weight, material, inner liner, printing, and the information that must appear on the label. See our guide to [rice packaging options](/blog/rice-packaging-options-for-wholesale-and-private-label-buyers/).`,
     },
     {
-      id: "onions",
-      heading: "Onion Packaging Options",
-      body: `Onions are normally packed in mesh bags that allow airflow. 18 kg and 20 kg mesh bags are common formats that can be discussed, subject to supplier availability. Other weights, bag colours or labels can be requested. See [Indian red onions](/products/onions/).`,
+      id: "coffee",
+      heading: "Green Coffee Bean Packaging",
+      body: `Green coffee beans are packed in 60 kg jute bags. Specialty lots use a GrainPro hermetic inner liner to preserve freshness and prevent moisture ingress; commercial lots use a polypropylene liner. A 20-foot container holds approximately 275 bags (≈16.5 MT). Custom markings and private-label packing must be confirmed with the supplier for each order. See [green coffee beans](/products/coffee-beans/).`,
     },
     {
       id: "spices",
@@ -353,7 +353,7 @@ export const marketsPage: InfoPageContent = {
   path: "/markets/",
   seoTitle: "International Agricultural Commodity Trade Enquiries | Assurex",
   metaDescription:
-    "Assurex International Traders welcomes enquiries from buyers in the Middle East, South and Southeast Asia, Europe and Africa for Indian onions, rice and spices.",
+    "Assurex International Traders welcomes enquiries from buyers in the Middle East, South and Southeast Asia, Europe, North America and Africa for Indian green coffee beans, rice and spices.",
   eyebrow: "Markets",
   h1: "Connecting Agricultural Products with Global Buyer Requirements",
   intro:
@@ -365,7 +365,7 @@ export const marketsPage: InfoPageContent = {
     {
       id: "middle-east",
       heading: "Middle East Buyer Enquiries",
-      body: `Gulf markets — including the **UAE, Saudi Arabia, Qatar, Oman, Kuwait and Bahrain** — have large South Asian communities and established trade with India in rice, onions and spices. Buyers in these markets commonly ask about Basmati, parboiled rice, Kerala Matta rice, red onions and whole spices. Destination requirements such as food-import registration, labelling and certificates vary by country and must be confirmed for each order.`,
+      body: `Gulf markets — including the **UAE, Saudi Arabia, Qatar, Oman, Kuwait and Bahrain** — are strong buyers of Indian green coffee, rice and spices. Indian Robusta (Wayanad) is the preferred base for traditional Qahwa (cardamom coffee) across the Gulf; Indian Arabica is growing in Gulf specialty cafés. Buyers also commonly ask about Basmati, parboiled rice, Kerala Matta rice and whole spices. Destination requirements such as food-import registration, halal certification, labelling and certificates vary by country. See individual country pages: [UAE](/markets/uae/), [Saudi Arabia](/markets/saudi-arabia/), [Kuwait](/markets/kuwait/), [Qatar](/markets/qatar/).`,
     },
     {
       id: "south-asia",
@@ -385,12 +385,12 @@ export const marketsPage: InfoPageContent = {
     {
       id: "africa",
       heading: "African Market Enquiries",
-      body: `Several African markets buy significant volumes of rice, including parboiled and long-grain non-Basmati rice, as well as onions. Import rules, standards and pre-shipment inspection requirements differ by country and are confirmed for each enquiry.`,
+      body: `Several African markets buy significant volumes of rice, including parboiled and long-grain non-Basmati rice, as well as Indian spices. Import rules, standards and pre-shipment inspection requirements differ by country and are confirmed for each enquiry.`,
     },
     {
       id: "compatibility",
       heading: "Product and Destination Compatibility",
-      body: `Not every product suits every destination equally. Onions are perishable and need routes and container settings that support their condition; spices may face strict residue and contaminant testing in some markets; rice preferences vary sharply by region. Before quoting, we consider:
+      body: `Not every product suits every destination equally. Green coffee beans need hermetic packing and moisture control; spices may face strict residue and contaminant testing in some markets; rice preferences vary sharply by region. Before quoting, we consider:
 
 - the destination's import rules and documentation
 - transit time and handling for perishable products
@@ -400,7 +400,7 @@ export const marketsPage: InfoPageContent = {
 
 | Product | Points to check for your destination |
 | --- | --- |
-| [Onions](/products/onions/) | Transit time, ventilation, phytosanitary conditions |
+| [Green coffee beans](/products/coffee-beans/) | Screen size, moisture, certifications (organic, halal), OTA limits |
 | [Rice](/products/rice/) | Variety preference, residue limits, labelling |
 | [Spices](/products/cardamom/) | Residue and aflatoxin limits, microbiology |`,
     },
